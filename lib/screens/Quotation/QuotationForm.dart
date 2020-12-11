@@ -62,8 +62,10 @@ class _QuotationFormState extends State<QuotationForm> {
   }
 
   void handleRadioValueChange(int val) {}
-  List<LifeInsuredElement> LifeInsuredList = [];
-  List<Benefit> BenefitList = [];
+  List<LifeInsuredElement> LifeInsuredList = [LifeInsuredElement()];
+  List<Benefit> BenefitList = [Benefit()];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -198,16 +200,21 @@ class _QuotationFormState extends State<QuotationForm> {
     ];
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color1,
-        child: Icon(Icons.add),
-        onPressed: () {
-          if (currentStep == 1) {
-            addLifeInsuredList();
-          } else if (currentStep == 2) {
-            addBenefitList();
-          }
-        },
+
+      floatingActionButton: Visibility(
+
+
+        child: FloatingActionButton(
+          backgroundColor: Color1,
+          child: Icon(Icons.add),
+          onPressed: () {
+            if (currentStep == 1) {
+              addLifeInsuredList();
+            } else if (currentStep == 2) {
+              addBenefitList();
+            }
+          },
+        ),
       ),
       appBar: CustomAppBar("Quotation Form"),
       body: Column(
@@ -227,18 +234,7 @@ class _QuotationFormState extends State<QuotationForm> {
                     {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
                   return Row(
                     children: <Widget>[
-                      Container(
-                        child: FlatButton(
-                          onPressed: onStepContinue,
-                          child: Text(
-                            "Next",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        color: mainColor,
-                        //padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.only(top: 12, right: 6),
-                      ),
+
                       Container(
                         child: FlatButton(
                           onPressed: onStepCancel,
@@ -248,6 +244,18 @@ class _QuotationFormState extends State<QuotationForm> {
                           ),
                         ),
                         color: Color(0XFFCFC4BB),
+                        //padding: EdgeInsets.all(5),
+                        margin: EdgeInsets.only(top: 12, right: 6),
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: onStepContinue,
+                          child: Text(
+                            "Next",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        color: mainColor,
                         //padding: EdgeInsets.all(5),
                         margin: EdgeInsets.only(top: 12, left: 6),
                       ),

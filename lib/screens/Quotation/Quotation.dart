@@ -25,7 +25,7 @@ class _QuotationState extends State<Quotation> {
     //Modal
 
     final SimpleDialog dialog = SimpleDialog(
-      title: Center(child: Text('Prospect Client')),
+      title: Center(child: Text('Products')),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       children: [
@@ -33,8 +33,8 @@ class _QuotationState extends State<Quotation> {
             child: SimpleDialogItem(
               text: 'Traditional',
               onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => Traditional()));
+                // Navigator.push(context,
+                //     new MaterialPageRoute(builder: (context) => Traditional()));
               },
             ),
             color: Color.fromRGBO(20, 20, 20, 0.1)),
@@ -53,7 +53,7 @@ class _QuotationState extends State<Quotation> {
                   new MaterialPageRoute(builder: (context) => DlLoanSecure()));
             },
           ),
-          color: Color.fromRGBO(20, 20, 20, 0.1),
+          // color: Color.fromRGBO(20, 20, 20, 0.1),
         ),
       ],
     );
