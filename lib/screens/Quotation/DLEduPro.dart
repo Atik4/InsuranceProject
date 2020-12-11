@@ -62,6 +62,7 @@ class DlEduPro extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             child: Center(
               child: RaisedButton(
+                color: Color1,
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => QuotationForm()));
